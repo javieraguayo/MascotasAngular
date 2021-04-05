@@ -5,10 +5,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './mascota.component.html',
   styleUrls: ['./mascota.component.css']
 })
+//listar mascotas
 export class MascotaComponent implements OnInit {
 
 
-  lista:{nombre:string,edad:number,descripcion:string,nombre_mascota:number}[]=[];
+  lista:{nombre:string,edad:number,descripcion:string,nombre_tipo:number}[]=[];
   async ngOnInit(){
     
     const mascotas = await fetch('http://localhost:3000/mascotas');
