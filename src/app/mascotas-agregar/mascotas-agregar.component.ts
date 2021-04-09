@@ -31,8 +31,6 @@ export class MascotasAgregarComponent {
       }
     })
     .then(res => res.json())
-    .catch(error => console.log('Error',error));
-    
+    .catch(error => console.log('Error',error)); 
   }
-
 }

@@ -1,12 +1,14 @@
 <div class="container">
     <h1 class="mx-auto mt-4 mb-4 text-white">Mascotas para adoptar</h1>
-    <table class="table table-dark">
+    <div class="table-responsive">
+      <table class="table table-dark">
         <thead>
           <tr>
             <th>Nombre</th>
             <th>Edad</th>
             <th>Descripcion</th>
             <th>tipo</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody *ngFor="let item of lista">
@@ -15,7 +17,14 @@
             <td>{{item.edad}}</td>
             <td>{{item.descripcion}}</td>
             <td>{{item.nombre_tipo}}</td>
+            <td>
+              
+                <button type="button" class="btn btn-primary rounded-pill mx-1" [routerLink]="['/mascotas-editar', item.mascota_id]">Editar</button>
+                <button type="button" class="btn btn-danger  rounded-pill mx-1" (click)="eliminarmascota(item.mascota_id)">Eliminar</button>
+                            
+            </td>
           </tr>
         </tbody>
-      </table>
+     </table>
+    </div>
 </div>
